@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bunny-pink: #FFB6C1;
+  --bunny-purple: #DDA0DD;
+  --bunny-white: #FFF5F7;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, var(--bunny-white) 0%, var(--bunny-pink) 100%);
+  min-height: 100vh;
+}
+
+.bad-bunny-card {
+  @apply bg-white rounded-3xl shadow-2xl p-8 backdrop-blur-lg bg-opacity-95;
+  animation: fadeIn 0.5s ease-in;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bunny-button {
+  @apply bg-gradient-to-r from-bunny-pink to-bunny-purple text-white font-bold py-3 px-8 rounded-full;
+  @apply hover:scale-105 transition-transform duration-200 shadow-lg;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bunny-button-secondary {
+  @apply border-2 border-bunny-purple text-bunny-purple font-bold py-3 px-8 rounded-full;
+  @apply hover:bg-bunny-purple hover:text-white transition-all duration-200;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 모든 요소에 박스 오버플로우 방지 */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
