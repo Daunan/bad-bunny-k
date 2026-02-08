@@ -50,8 +50,33 @@ body {
   text-overflow: ellipsis;
 }
 
-/* 모든 요소에 박스 오버플로우 방지 */
+/* 모든 요소에 박스 오버플로우 방지 + 텍스트 정렬 */
 * {
   box-sizing: border-box;
   max-width: 100%;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* 한글/다국어 텍스트 정렬 */
+body,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+/* 버튼 텍스트 중앙 정렬 */
+button {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
